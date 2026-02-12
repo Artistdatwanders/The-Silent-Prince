@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://xjqrjksj0mjt"]
+
+[ext_resource type="Script" uid="uid://cxatljnp0j8wc" path="res://Scripts/menu.gd" id="1_cayip"]
+[ext_resource type="FontFile" uid="uid://dg7qtooi64fye" path="res://Fonts/GreatVibes-Regular.ttf" id="1_xhh6f"]
+[ext_resource type="Texture2D" uid="uid://bncpw1bpsm2e5" path="res://Art/little prince Title Screen 1.2.png" id="2_cayip"]
+[ext_resource type="AudioStream" uid="uid://clh4gfijtdtvg" path="res://Music/the-quarrel-sad-slow-piano-music-314449.mp3" id="4_158mb"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cayip")
+
+[node name="Title" type="Label" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.5
+offset_top = -190.0
+offset_right = 188.5
+offset_bottom = -113.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_xhh6f")
+theme_override_font_sizes/font_size = 120
+text = "The Silent Prince"
+
+[node name="TitleScreen" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+texture_normal = ExtResource("2_cayip")
+
+[node name="StartMessage" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -206.5
+offset_top = -70.0
+offset_right = 206.5
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.40985093, 0.48898795, 1.1561313, 1)
+theme_override_fonts/font = ExtResource("1_xhh6f")
+theme_override_font_sizes/font_size = 60
+text = "Press Enter to start"
+
+[node name="TitleMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_158mb")
+
+[connection signal="pressed" from="TitleScreen" to="." method="_on_texture_button_pressed"]

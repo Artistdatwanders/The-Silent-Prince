@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgen6iepycyxu"]
+
+[ext_resource type="Texture2D" uid="uid://wg768fbsvcoi" path="res://Art/little prince backGround noPlanet.png" id="1_5mxcp"]
+[ext_resource type="Texture2D" uid="uid://0jw5stugbytq" path="res://Art/little prince bg Planet.png" id="2_kfiwv"]
+
+[node name="BackgroundGameplay" type="Node2D"]
+
+[node name="StarsBG" type="Parallax2D" parent="."]
+z_index = -1
+scroll_scale = Vector2(0.5, 0.5)
+repeat_size = Vector2(3840, 0)
+autoscroll = Vector2(-100, 0)
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StarsBG"]
+texture = ExtResource("1_5mxcp")
+centered = false
+
+[node name="PlanetBG" type="Parallax2D" parent="."]
+z_index = 1
+scroll_scale = Vector2(1.5, 1.5)
+repeat_size = Vector2(3840, 0)
+autoscroll = Vector2(-80, 0)
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="PlanetBG"]
+texture = ExtResource("2_kfiwv")
+centered = false
